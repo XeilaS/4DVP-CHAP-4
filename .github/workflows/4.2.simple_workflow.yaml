@@ -1,0 +1,12 @@
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  confidential_data:
+      # Any echoed secret will be masked in the job's log​
+    runs-on: ubuntu-latest
+    steps:
+    - name: "Show secret value"
+      run: echo "SECRET_VALUE=${{ secrets.SUPER_SECRET }}"
+  
+      
