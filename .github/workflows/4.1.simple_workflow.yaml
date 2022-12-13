@@ -1,0 +1,11 @@
+on:
+  push:
+# Global env variables can be defined at the root of a workflow​
+env:
+  TARGET: MESSAGE
+  COMPONENT: Ceci est une variable d'environnement.
+jobs:
+  display-env:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ env.COMPONENT }} = ${{ env.TARGET }}"
